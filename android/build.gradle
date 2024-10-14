@@ -60,7 +60,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
 
     // Add sumup SDK dependency
-    implementation 'com.sumup:merchant-sdk:4.3.0'
+    implementation 'com.sumup:merchant-sdk:5.0.2'
 
     // Add dependency on Google Location Services for improvements of location accuracy and reducing
     //  the power consumption
