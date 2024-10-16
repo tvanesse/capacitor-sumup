@@ -42,16 +42,14 @@ public class SumUpPlugin extends Plugin {
             throw new IllegalArgumentException("affiliatekey is not set");
         }
 
-        SumUpLogin sumupLogin = SumUpLogin.builder(key).build();
-        SumUpAPI.openLoginActivity(MainActivity.this, sumupLogin, 1);
 
-        // // DEV NOTE: The SumupLogin Builder is not used as we can't get the intent from it later.
-        // //  We require this intent to get the result and give it back to capacitor.
-        // Intent LoginIntent = new Intent(this.getActivity(), LoginActivity.class);
-        // LoginIntent.putExtra("isAffiliate", true);
-        // LoginIntent.putExtra("affiliate-key", key);
+        // DEV NOTE: The SumupLogin Builder is not used as we can't get the intent from it later.
+        //  We require this intent to get the result and give it back to capacitor.
+        Intent LoginIntent = new Intent(this.getActivity(), LoginActivity.class);
+        LoginIntent.putExtra("isAffiliate", true);
+        LoginIntent.putExtra("affiliate-key", key);
 
-        // startActivityForResult(call, LoginIntent, "handleResponse");
+        startActivityForResult(call, LoginIntent, "handleResponse");
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
